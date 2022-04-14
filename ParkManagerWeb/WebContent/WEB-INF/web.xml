@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>停车场管理系统</display-name> 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <servlet>
+    <description>验证码</description>
+    <servlet-name>Cpachaservlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.Cpachaservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cpachaservlet</servlet-name>
+    <url-pattern>/Cpachaservlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description>登陆验证</description>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <description>登录状态过滤</description>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>org.park.programmer.filter.LoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/SystemServlet</url-pattern>
+    <url-pattern>/AdminServlet</url-pattern>
+    <url-pattern>/CarUserServlet</url-pattern><!-- 普通用户的 -->
+    <url-pattern>/ParkServlet</url-pattern>
+    <url-pattern>/CarInfoServlet</url-pattern>  
+    <url-pattern>/CarDriveInAOut</url-pattern>
+	<url-pattern>/CarPriceServlet</url-pattern>
+	<url-pattern>/AppointServlet</url-pattern>      
+  </filter-mapping>
+   
+  <servlet>
+    <description>登陆后的主界面</description>
+    <servlet-name>SystemServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.SystemServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SystemServlet</servlet-name>
+    <url-pattern>/SystemServlet</url-pattern>
+  </servlet-mapping>
+   
+   <servlet>
+    <description>车主信息管理</description>
+    <servlet-name>CarUserServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.CarUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarUserServlet</servlet-name>
+    <url-pattern>/CarUserServlet</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <description>车位信息管理</description>
+    <servlet-name>ParkServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.ParkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParkServlet</servlet-name>
+    <url-pattern>/ParkServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>图片管理</description>
+    <servlet-name>PhotoServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.PhotoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PhotoServlet</servlet-name>
+    <url-pattern>/PhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>车辆信息管理</description>
+    <servlet-name>CarInfoServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.CarInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarInfoServlet</servlet-name>
+    <url-pattern>/CarInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>车辆出入管理</description>
+    <servlet-name>CarDriveInAOutServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.CarDriveInAOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarDriveInAOutServlet</servlet-name>
+    <url-pattern>/CarDriveInAOutServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description>停车收费管理</description>
+    <servlet-name>CarPriceServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.CarPriceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarPriceServlet</servlet-name>
+    <url-pattern>/CarPriceServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>预约管理</description>
+    <servlet-name>AppointServlet</servlet-name>
+    <servlet-class>org.park.programmer.servlet.AppointServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppointServlet</servlet-name>
+    <url-pattern>/AppointServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
