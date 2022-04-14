@@ -1,17 +1,6 @@
- /*
-NodeMCU无线终端模式连接WiFi
-By 太极创客（http://www.taichi-maker.com）
-2019-03-11
- 
-本示例程序用于演示如何使用NodeMCU无线终端模式连接WiFi
 
-如需获得更多关于如何使用NodeMCU开发物联网的教程和资料信息
-请参考太极创客网站（http://www.taichi-maker.com）
-并在首页搜索栏中搜索关键字：物联网
-*/
 
-#include <ESP8266WiFi.h>        // 本程序使用ESP8266WiFi库
-
+#include <ESP8266WiFi.h>       
 const char* ssid     = "liuwenbo";      
                                            
 const char* password = "liu980627";          
